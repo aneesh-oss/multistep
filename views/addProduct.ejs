@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Product</title>
+</head>
+<body>
+  <h1>Add Product</h1>
+  <form action="/add-product" method="post">
+    <input type="text" name="name" placeholder="Product Name" required><br>
+    <input type="number" name="price" placeholder="Product Price" required><br>
+    <input type="text" name="description" placeholder="Product Description"><br>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <h2>Update Product</h2>
+  <form id="updateForm" action="/update-product/:id" method="post">
+    <input type="text" name="id" placeholder="Product ID" required><br>
+    <input type="text" name="name" id="updateName" placeholder="Product Name"><br>
+    <input type="number" name="price" id="updatePrice" placeholder="Product Price"><br>
+    <input type="text" name="description" id="updateDescription" placeholder="Product Description"><br>
+    <button type="submit">Update Product</button>
+  </form>
+
+  <!-- <h2>Update Product</h2>
+  <form action="" method="post" id="updateForm">
+    <input type="text" id="updateId" name="id" placeholder="Product ID" required><br>
+    <input type="text" name="name" placeholder="Product Name"><br>
+    <input type="number" name="price" placeholder="Product Price"><br>
+    <input type="text" name="description" placeholder="Product Description"><br>
+    <button type="submit">Update Product</button>
+  </form> -->
+
+  <!-- <h2>Update Product</h2>
+  <form action="/update-product/:id" method="post">
+    <input type="text" name="id" placeholder="Product ID" required><br>
+    <input type="text" name="name" placeholder="Product Name"><br>
+    <input type="number" name="price" placeholder="Product Price"><br>
+    <input type="text" name="description" placeholder="Product Description"><br>
+    <button type="submit">Update Product</button>
+  </form> -->
+
+  <h2>Delete Product</h2>
+  <form action="/delete-product/:id" method="post">
+    <input type="text" name="id" placeholder="Product ID" required><br>
+    <button type="submit">Delete Product</button>
+  </form>
+
+  <h2><a href="/products">View All Products</a></h2>
+
+  <script>
+
+    function populateDeleteForm(productId) {
+        document.getElementById('deleteForm').action = `/delete-product/${productId}`;
+      }
+    //function populateUpdateForm(product) { -->
+    //    document.getElementById('updateForm').action = `/update-product/${product._id}`;
+    //    document.getElementById('updateName').value = product.name;
+    //    document.getElementById('updatePrice').value = product.price;
+    //    document.getElementById('updateDescription').value = product.description;
+    //}
+    // Update the form action dynamically based on the entered ID
+    //document.getElementById('updateForm').addEventListener('submit', function(event) {
+    //  event.preventDefault();
+    //  const id = document.getElementById('updateId').value;
+    //  this.action = `/update-product/${id}`;
+    //  this.submit();
+    //});
+</script>
+</body>
+</html>
